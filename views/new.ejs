@@ -5,14 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
 </head>
 <body>
     <h1>Add a new item</h1>
-<input type="text"><input type="text"placeholder="text"> <br>
-<input type="number"><input type="text"placeholder="text"><br>
-<button>CREATE NEW ITEM</button>
-
+  
+<form action="/budgets" method="POST">
+    <input type="text"required name="date"><input type="text"placeholder="text"required name="name"> <br>
+    <input type="number"required name="amount"><input type="text"placeholder="text"required name="from"><br>
+    <button type=“submit”> Create New Item </button>
+</form>
 </body>
 </html>

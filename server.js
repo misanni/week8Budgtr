@@ -2,6 +2,7 @@ const { response } = require("express");
 const express = require("express");
 const budget= require("./models/budget.js");
 const app=express();
+app.use(express.urlencoded({ extended:false }));
 
 app.get('/budgets', (request, response)=>{
     response.render("index.ejs", {
@@ -15,11 +16,14 @@ app.get('/budgets', (request, response)=>{
  app.get('/budget/new', (request, response)=>{
     response.render("new.ejs");
  });
-// app.get('/budget', (request, response)=>{
-//     response.render()
-// });
 
 
+app.post('/budgets', (request, response)=>{
+    console.log(request.body);
+    budget.push(request.body);
+
+response.redirect("/budgets");
+});
 
 
 app.listen(3000,()=>{
