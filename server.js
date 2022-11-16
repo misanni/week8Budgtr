@@ -3,10 +3,12 @@ const express = require("express");
 const budget= require("./models/budget.js");
 const app=express();
 app.use(express.urlencoded({ extended:false }));
-
+//const account=0;
+//const transaction=0
 app.get('/budgets', (request, response)=>{
     response.render("index.ejs", {
-        allbudget:budget
+        allbudget:budget,
+        //bankAccount:account
     });
 });
 // date  name  from  amount tag
